@@ -6,55 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="306dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginBottom="456dp"
+        android:src="@drawable/hrbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="278dp"
-        android:layout_height="71dp"
+        android:layout_width="314dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/_00_00_00"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/start"
+    <ImageButton
+        android:id="@+id/plb"
+        android:layout_width="105dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="130dp"
+        android:background="@android:color/transparent"
         android:onClick="onClickStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="UsingOnClickInXml" />
+        android:src="@drawable/plb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/stop"
+    <ImageButton
+        android:id="@+id/psb"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:background="@android:color/transparent"
         android:onClick="onClickStop"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="UsingOnClickInXml" />
+        android:src="@drawable/psb"
+        android:visibility="invisible"
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="@+id/plb"
+        app:layout_constraintEnd_toEndOf="@+id/plb"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/plb"
+        app:layout_constraintTop_toTopOf="@+id/plb"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/rstb"
+        android:layout_width="104dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="130dp"
+        android:background="@android:color/transparent"
         android:onClick="onClickReset"
+        android:src="@drawable/rstb"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

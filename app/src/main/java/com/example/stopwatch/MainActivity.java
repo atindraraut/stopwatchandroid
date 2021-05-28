@@ -6,6 +6,9 @@ import android.app.Activity;
 import android.os.Handler;
 import android.view.View;
 import java.util.Locale;
+
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -51,16 +54,28 @@ public class MainActivity extends Activity {
     {
 
         is_running = true;
+        ImageButton stopbutton = (ImageButton) findViewById(R.id.psb);
+        stopbutton.setVisibility(View.VISIBLE);
+        ImageButton startbutton = (ImageButton) findViewById(R.id.plb);
+        startbutton.setVisibility(View.INVISIBLE);
     }
     public void onClickStop(View view)
     {
 
         is_running = false;
+        ImageButton stopbutton = (ImageButton) findViewById(R.id.psb);
+        stopbutton.setVisibility(View.INVISIBLE);
+        ImageButton startbutton = (ImageButton) findViewById(R.id.plb);
+        startbutton.setVisibility(View.VISIBLE);
     }
     public void onClickReset(View view)
     {
         is_running = false;
         sec = 0;
+        ImageButton stopbutton = (ImageButton) findViewById(R.id.psb);
+        stopbutton.setVisibility(View.INVISIBLE);
+        ImageButton startbutton = (ImageButton) findViewById(R.id.plb);
+        startbutton.setVisibility(View.VISIBLE);
     }
     private void running_Timer()
     {
@@ -73,7 +88,7 @@ public class MainActivity extends Activity {
                 int hrs = sec / 3600;
                 int mins = (sec % 3600) / 60;
                 int secs = sec % 60;
-                String time_t = String .format(Locale.getDefault(), "    %d:%02d:%02d   ", hrs,mins, secs);
+                String time_t = String .format(Locale.getDefault(), "    %d  : %02d : %02d   ", hrs,mins, secs);
                 t_View.setText(time_t);
                 if (is_running) {
                     sec++;
